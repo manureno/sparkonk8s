@@ -1,9 +1,9 @@
 ## Configure a Kubernetes Cluster for Spark usage
 
 ### Pre-Requisite
-* A Kubernetes cluster, named _K8S-CLUSTER_ in this document, has been created on IBM CLoud
-* A Container Registry Namespace, called _CR-NAMESPACE_ in this document, has been created on IBM CLoud
-* ibmcloud CLI is installed on you workstation
+* A Kubernetes cluster, named _K8S-CLUSTER_ in this document, has been created on IBM Cloud
+* A Container Registry Namespace, called _CR-NAMESPACE_ in this document, has been created on IBM Cloud
+* ibmcloud CLI is installed on your workstation
 * Docker is installed on your workstation
 
 ### Configuration Steps
@@ -12,7 +12,7 @@
 2. [Create a service account on the IBM Cloud Cluster](#create-a-service-account-on-the-ibm-cloud-cluster)
 
 
-###Connect Local Docker to IBM Cloud Cluster
+### Connect Local Docker to IBM Cloud Cluster
 These steps allow to connect your local environment to the IBM Cloud.  
 This is useful to deploy Docker images to the IBM Container Registry Namespace and to use local kubectl CLI to interact with the IBM Cloud cluster.
 
@@ -33,7 +33,7 @@ $ ibmcloud cr login -client docker
 $ ibmcloud ks cluster config --cluster K8S-CLUSTER
 ```
 
-###Create a service account on the IBM Cloud Cluster
+### Create a service account on the IBM Cloud Cluster
 These steps allow to create a service account named "sa-spark" which will be used by spark containers.  
 This service account need to be allowed to pull images from the CR Namespace
 
@@ -69,7 +69,7 @@ kubectl patch serviceaccounts/sa-spark -p "{\"imagePullSecrets\": [{\"name\": \"
 $ kubectl get serviceaccounts/sa-spark -o yaml
 ``` 
 
-###Congratulations !
+### Congratulations !
 Let's summarize your achievements :
 
 - [x] Your local Docker environment is now connected to IBM Cloud Container Registry and to a Kubernetes cluster  
