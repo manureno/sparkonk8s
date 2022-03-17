@@ -52,7 +52,7 @@ scala>
 ```
 
 ### Build Spark Docker Image
-Spark comes with Docker files under %SPARK_HOME%\kubernetes\dockerfiles\spark
+Spark comes with Docker files under %SPARK_HOME%\kubernetes\dockerfiles\spark  
 We will build an image from one of these Docker files :
 * Build the image
 ```
