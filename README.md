@@ -1,6 +1,7 @@
 # Spark On Kubernetes
 
-This project is a step-by-step guide to get a Spark workload running on an IBM Cloud Kubernetes cluster.
+This project is a step-by-step guide to get a Spark workload running on an IBM Cloud Kubernetes cluster.   
+It is inspired by the official Spark documentation : https://spark.apache.org/docs/latest/running-on-kubernetes.html
 
 **Pre Requisite**  
 A Kubernetes Cluster and a Container Registry Namespace have been provisioned on IBM Cloud.   
