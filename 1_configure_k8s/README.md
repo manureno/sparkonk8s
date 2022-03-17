@@ -34,7 +34,7 @@ $ ibmcloud ks cluster config --cluster K8S-CLUSTER
 ```
 
 ### Create a service account on the IBM Cloud Cluster
-These steps allow to create a service account named "sa-spark" which will be used by spark containers.  
+These steps allow to create a service account named _sa-spark_ which will be used by spark containers.  
 This service account need to be allowed to pull images from the CR Namespace
 
 * Create a _sa-spark_ service account 
@@ -53,7 +53,7 @@ $ kubectl get serviceaccounts/sa-spark -o yaml
 ```
 $ kubectl create clusterrolebinding spark-role --clusterrole=edit --serviceaccount=default:sa-spark --namespace=default
 ```
-* Give to _sa-spark_ service account the secret allowing to pull images from the Cnotainer Registry Namespaces   
+* Give to _sa-spark_ service account the secret allowing to pull images from the Container Registry Namespaces   
 
 The Linux way:
 ```
