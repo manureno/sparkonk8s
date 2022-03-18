@@ -9,6 +9,8 @@ See dedicated project for more information about provisioning these elements : h
 
 **Steps**  
 1. [Configure Kubernetes Cluster for Spark usage](1_configure_k8s/README.md)
-2. [Create a Docker image with Spark Samples](2_create_sparksample_image/README.md) 
-3. [Create a Container and run a Spark Sample](3_create_container_and_run/README.md)
-   
+2. Run a "Compute PI" Spark Sample on Kubernetes    
+   1. [Create a Docker image with Spark Samples](2_create_sparksample_image/README.md)
+   2. [Create a Container and run a Spark Sample](3_create_container_and_run/README.md)
+3. Run a PySpark Workload
+   1. [Create a PySpark Docker Image](4_create_pyspark_image/README.md)

@@ -6,10 +6,10 @@
 * A Container Registry Namespace, called _CR-NAMESPACE_ in this document, has been created on IBM Cloud
 * A Kubernetes cluster, named _K8S-CLUSTER_ in this document, has been created on IBM Cloud
 
-### Docker Image Creation Steps
+### Spark Docker Image Creation Steps
 1. [Install Spark on Windows](#install-spark-on-windows)
 2. [Build the Spark Docker image](#build-spark-docker-image)
-3. [Push the Docker Image to a Container Registry Namespace](#push-docker-image-to-a-container-registry-namespace)
+3. [Push the Image to a Container Registry Namespace](#push-docker-image-to-a-container-registry-namespace)
 
 ### Install Spark on Windows
 * At the time of writing this document, Spark 3.2.1 is the latest but has an issue on Windows, Spark 3.1.3 will thus be used
