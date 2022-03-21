@@ -14,3 +14,4 @@ See dedicated project for more information about provisioning these elements : h
    2. [Create a Container and run a Spark Sample](3_create_container_and_run/README.md)
 3. Run a PySpark Workload
    1. [Create a PySpark Docker Image](4_create_pyspark_image/README.md)
+   2. [Create and run a "Hello PySpark" workload](5_hello_pyspark/README.md)

@@ -23,22 +23,22 @@ ibmcloud ks cluster config --cluster K8S-CLUSTER
 ```
 kubectl cluster-info
 
-Kubernetes control plane is running at https://c111.eu-de.containers.cloud.ibm.com:30249
-CoreDNS is running at https://c111.eu-de.containers.cloud.ibm.com:30249/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
-kubernetes-dashboard is running at https://c111.eu-de.containers.cloud.ibm.com:30249/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy
-Metrics-server is running at https://c111.eu-de.containers.cloud.ibm.com:30249/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
-NodeLocalDNS is running at https://c111.eu-de.containers.cloud.ibm.com:30249/api/v1/namespaces/kube-system/services/node-local-dns:dns/proxy
+Kubernetes control plane is running at https://CONTROL-PLANE-HOST:CP-PORT
+CoreDNS is running at https://CONTROL-PLANE-HOST:CP-PORT/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+kubernetes-dashboard is running at https://CONTROL-PLANE-HOST:CP-PORT/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy
+Metrics-server is running at https://CONTROL-PLANE-HOST:CP-PORT/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+NodeLocalDNS is running at https://CONTROL-PLANE-HOST:CP-PORT/api/v1/namespaces/kube-system/services/node-local-dns:dns/proxy
 ```
 
 * Submit the spark job :
-  + --master k8s://https://c111.eu-de.containers.cloud.ibm.com:30249 : Spark will use Kubernetes as resource manager, the URL contains the control plane of the previous step.   
+  + --master k8s://https://CONTROL-PLANE-HOST:CP-PORT : Spark will use Kubernetes as resource manager, the URL contains the control plane of the previous step.   
   + --deploy-mode cluster : The spark driver will run as a pod in the cluster
   + --conf spark.executor.instances=3 : 3 executors will run each as a Pod in the cluster
   + --conf spark.kubernetes.container.image=de.icr.io/ns-am-dh/spark-3.1.3 : the image to pull out of the CR
   + --conf spark.kubernetes.authenticate.driver.serviceAccountName=sa-spark : service account under which the Pods will run
   + local:///opt/spark/examples/jars/spark-examples_2.12-3.1.3.jar : the location of jars inside the container
 ```
-spark-submit --master k8s://https://c111.eu-de.containers.cloud.ibm.com:30249 ^
+spark-submit --master k8s://https://CONTROL-PLANE-HOST:CP-PORT ^
     --deploy-mode cluster ^
     --name spark-pi ^
     --class org.apache.spark.examples.SparkPi ^
