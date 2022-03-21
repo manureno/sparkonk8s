@@ -1,4 +1,6 @@
 ## Configure a Kubernetes Cluster for Spark usage
+In this chapter, we'll create a Kubernetes service account and a role binding, which are pre-requisite before running a Spark workload.   
+   
 
 ### Pre-Requisite
 * A Kubernetes cluster, named _K8S-CLUSTER_ in this document, has been created on IBM Cloud
