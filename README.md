@@ -18,3 +18,4 @@ See dedicated project for more information about provisioning these elements : h
 
 **Cheat Sheet**   
 - [Connect Local Docker to IBM Cloud Cluster](0_cheat_sheets/connect_local_docker_to_cloud_k8s.md)
+- [Miscellaneous helpers](0_cheat_sheets/miscellaneous.md)
