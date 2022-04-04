@@ -13,6 +13,7 @@ In this chapter, we'll create a Kubernetes service account and a role binding, w
 1. [Connect Local Docker to IBM Cloud Cluster](#connect-local-docker-to-ibm-cloud-cluster)
 2. [Create a service account on the IBM Cloud Cluster](#create-a-service-account-on-the-ibm-cloud-cluster)
 
+[!INCLUDE [init_environment.md](../0_includes/init_environment.md)]
 
 ### Connect Local Docker to IBM Cloud Cluster
 These steps allow to connect your local environment to the IBM Cloud.  
