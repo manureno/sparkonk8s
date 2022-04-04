@@ -15,3 +15,6 @@ See dedicated project for more information about provisioning these elements : h
 3. Run a PySpark Workload
    1. [Create a PySpark Docker Image](4_create_pyspark_image/README.md)
    2. [Create and run a "Hello PySpark" workload](5_hello_pyspark/README.md)
+
+**Cheat Sheet**   
+- [Connect Local Docker to IBM Cloud Cluster](0_cheat_sheets/connect_local_docker_to_cloud_k8s.md)

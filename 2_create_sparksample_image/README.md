@@ -3,6 +3,7 @@
 ### Pre-Requisite
 * Docker is installed on your workstation
 * ibmcloud CLI is installed on your workstation
+* Your local Docker environment is connected to IBM Cloud Kubernetes : [initialisation procedure](../0_cheat_sheets/connect_local_docker_to_cloud_k8s.md)
 * A Container Registry Namespace, called _CR-NAMESPACE_ in this document, has been created on IBM Cloud
 * A Kubernetes cluster, named _K8S-CLUSTER_ in this document, has been created on IBM Cloud
 
@@ -66,9 +67,8 @@ docker images
 
 ### Push Docker Image to a Container Registry Namespace
 
-* Connect to IBM Cloud and check the available namespaces
+* Check the available namespaces
 ```
-ibmcloud login
 ibmcloud cr namespace-list -v
 ```
 * Tag the Spark image to allow its deployment in one of the IBM Container Registry Namespaces
@@ -78,10 +78,6 @@ docker tag spark-3.1.3 de.icr.io/CR-NAMESPACE/spark-3.1.3
 * Check that the image tagged de.icr.io/CR-NAMESPACE/spark-3.1.3 appears in your local repository
 ```
 docker images
-```
-* If not already done, log local docker daemon to IBM Cloud Container Registry
-```
-ibmcloud cr login -client docker
 ```
 * Push the image to the namespace
 ```

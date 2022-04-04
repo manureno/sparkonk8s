@@ -14,9 +14,12 @@ Project Content :
 
 
 ### Pre-Requisite
-You've completed the [Create a PySpark Docker Image](../4_create_pyspark_image/README.md) chapter.   
-Python is installed and on your PATH.   
-An IBM Cloud Container Registry Namespace, named _CR-NAMESPACE_ in this document, have been created.
+* Docker is installed on your workstation
+* ibmcloud CLI is installed on your workstation
+* Your local Docker environment is connected to IBM Cloud Kubernetes : [initialisation procedure](../0_cheat_sheets/connect_local_docker_to_cloud_k8s.md)
+* You've completed the [Create a PySpark Docker Image](../4_create_pyspark_image/README.md) chapter.   
+* Python is installed and on your PATH.   
+* An IBM Cloud Container Registry Namespace, named _CR-NAMESPACE_ in this document, have been created.
 
 ### Run HelloSpark Steps
 1. [Create a "Hello PySpark" wheel package](#create-a-hello-pyspark-wheel-package)
@@ -60,16 +63,6 @@ docker build -t hello-pyspark -f Dockerfile .
 * Tag the image for publishing
 ```
 docker tag hello-pyspark de.icr.io/CR-NAMESPACE/hello-pyspark
-```
-
-* Log in to IBM Cloud
-```
-ibmcloud login
-```
-
-* Link local docker and remote Container Registry
-```
-ibmcloud cr login -client docker
 ```
 
 * Publish the image

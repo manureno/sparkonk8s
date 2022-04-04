@@ -2,21 +2,16 @@
 ### Pre-Requisites
 * Docker is installed on your workstation
 * ibmcloud CLI is installed on your workstation
+* Your local Docker environment is connected to IBM Cloud Kubernetes : [initialisation procedure](../0_cheat_sheets/connect_local_docker_to_cloud_k8s.md)
 * A Container Registry Namespace, called _CR-NAMESPACE_ in this document, has been created on IBM Cloud
 * A Kubernetes cluster, named _K8S-CLUSTER_ in this document, has been created on IBM Cloud
 * A Spark Docker image has been pushed to the _CR-NAMESPACE_
 * A Service account named _sa-spark_ and an associated role binding have been added to _K8S-CLUSTER_ 
 
 ### Container Creation and Execution Steps
-* Connect to IBM Cloud and check the available images
+* Check the available images
 ```
-ibmcloud login
 ibmcloud cr image-list
-```
-
-* Connect local docker daemon to IBM Cloud cluster 
-```
-ibmcloud ks cluster config --cluster K8S-CLUSTER
 ```
 
 * Show Kubernetes cluster information : the "control plane" URL will be used to submit the Spark job
