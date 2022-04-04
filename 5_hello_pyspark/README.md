@@ -6,7 +6,10 @@ which basically create and print a Spark Dataframe, in a Kubernetes environment.
 Project Content :
 ```
 5_hello_pyspark
-  +- requirements : Pyhon dependencies
+  +- jars         : Place where to download S3 3rd party libraries 
+  +- notebooks    : Interactive code samples
+  +- requirements : Python dependencies
+  +- scripts      : Helper scripts to spark-submit the application
   +- src          : Code of the application
   +- Dockerfile   : Instructions to create a Docker Image including PySpark and the application 
   +- setup.py     : Instructions to create a Python wheel package
@@ -22,9 +25,22 @@ Project Content :
 * An IBM Cloud Container Registry Namespace, named _CR-NAMESPACE_ in this document, have been created.
 
 ### Run HelloSpark Steps
-1. [Create a "Hello PySpark" wheel package](#create-a-hello-pyspark-wheel-package)
-2. [Publish a "Hello PySpark" Docker image](#publish-a-hello-pyspark-docker-image)
-3. [Run a container out of the image](#run-a-container-out-of-the-image)
+1. [Download S3 connectors](#download-s3-connectors)
+2. [Create a "Hello PySpark" wheel package](#create-a-hello-pyspark-wheel-package)
+3. [Publish a "Hello PySpark" Docker image](#publish-a-hello-pyspark-docker-image)
+4. [Run a container out of the image](#run-a-container-out-of-the-image)
+
+### Download S3 Connectors
+The S3 API will be used to write to Cloud Object Storage, for this purpose Spark requires a client library packaged as jar files.   
+The AWS implementation to write from Spark to S3 is made of 2 jars :  
+* hadoop-aws-3.2.0.jar
+   * version of hadoop-aws should match the hadoop version of Spark distribution
+   * hadoop-aws can be downloaded from https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws
+* aws-java-sdk-bundle-1.11.375.jar
+   * Version of aws-java-sdk-bundle should match "compile dependency" of hadoop-aws artifact : this is visible on the artifact mavenrepository page 
+   * Compile dependency of hadoop-aws-3.2.0.jar (https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-aws/3.2.0) is aws-java-sdk-bundle-1.11.375.jar which is avilable here : https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bundle/1.11.375
+  
+**Download these 2 jars under \jars folder**
 
 ### Create a "Hello PySpark" wheel package
 
