@@ -17,7 +17,8 @@ ibmcloud cr image-list
 * Show Kubernetes cluster information : the "control plane" URL will be used to submit the Spark job
 ```
 kubectl cluster-info
-
+```
+```
 Kubernetes control plane is running at https://CONTROL-PLANE-HOST:CP-PORT
 CoreDNS is running at https://CONTROL-PLANE-HOST:CP-PORT/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 kubernetes-dashboard is running at https://CONTROL-PLANE-HOST:CP-PORT/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy

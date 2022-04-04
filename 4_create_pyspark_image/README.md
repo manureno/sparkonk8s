@@ -19,20 +19,31 @@
   + --build-arg base_img=spark-3.1.3 : the base image to use (it relies on the spark-3.1.3 image built in previous section)
   + %SPARK_HOME% : Context used to build the image 
 ```
->docker build -t pyspark-3.1.3 -f %SPARK_HOME%\kubernetes\dockerfiles\spark\bindings\python\Dockerfile --build-arg base_img=spark-3.1.3 %SPARK_HOME%
+docker build -t pyspark-3.1.3 -f %SPARK_HOME%\kubernetes\dockerfiles\spark\bindings\python\Dockerfile --build-arg base_img=spark-3.1.3 %SPARK_HOME%
 ```
 
 * Run an interactive container to inspect the new image
 ```
->docker run -it pyspark-3.1.3 bash
-
-$ python3 --version
+docker run -it pyspark-3.1.3 bash
+```
+```
+python3 --version
+```
+```
 Python 3.9.2
-$java -version
+```
+```
+java -version
+```
+```
 openjdk version "11.0.14.1" 2022-02-08
 OpenJDK Runtime Environment 18.9 (build 11.0.14.1+1)
 OpenJDK 64-Bit Server VM 18.9 (build 11.0.14.1+1, mixed mode, sharing)
-$ ls -l $SPARK_HOME
+```
+```
+ls -l $SPARK_HOME
+```
+```
 total 48
 -rw-r--r-- 1 root root     0 Mar 14 11:23 RELEASE
 drwxr-xr-x 2 root root  4096 Mar 17 14:34 bin
@@ -45,6 +56,8 @@ drwxr-xr-x 2 root root  4096 Mar 17 14:34 tests
 drwxrwxr-x 1 root root  4096 Mar 14 11:23 work-dir
 $ ls -l $SPARK_HOME/python/pyspark
 [...]
+```
+```
 exit
 ```
 

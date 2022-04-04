@@ -29,9 +29,11 @@ set PATH=%SPARK_HOME%\bin;%PATH%
 set JAVA_HOME=C:\Applications\Java\jdk1.8.0_181
 set PATH=%JAVA_HOME%\bin;%PATH%
 ```
-* Check Spark works
+* Start a spark shell to check install is successful
 ```
 spark-shell
+```   
+```
 22/03/17 15:20:53 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
 Setting default log level to "WARN".

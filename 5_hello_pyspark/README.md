@@ -30,27 +30,32 @@ Project Content :
 
 * Create & activate a virtual env, upgrade pip and install modules required by the project and the packaging process
 ```
->python -m venv venv
-[...]
->.\venv\Scripts\activate
-(venv) >python -m pip install --upgrade pip
-[...]
-(venv) >pip install -r requirements\package.requirements.txt
-[...]
-(venv) >pip install -r requirements\development.requirements.txt
+python -m venv venv
+```
+```
+.\venv\Scripts\activate
+```
+```
+python -m pip install --upgrade pip
+```
+```
+pip install -r requirements\package.requirements.txt
+```
+```
+pip install -r requirements\development.requirements.txt
 ``` 
 
 * Build the Python package
 ```
-(venv) >python setup.py bdist_wheel --universal
+python setup.py bdist_wheel --universal
 ```
 
 * The package should have been created under the dist folder : 
 ```
-> dir dist
-[...]
+dir dist
+```
+```
 03/18/2022  04:26 PM             1,051 hello_pyspark-1.0-py2.py3-none-any.whl
-[...]          
 ```
 
 ### Publish a "Hello PySpark" Docker image
@@ -79,7 +84,8 @@ ibmcloud cr image-list
 * Show Kubernetes cluster information : the "control plane" URL will be used to submit the Spark job
 ```
 kubectl cluster-info
-
+```
+```
 Kubernetes control plane is running at https://CONTROL-PLANE-HOST:CP-PORT
 CoreDNS is running at https://CONTROL-PLANE-HOST:CP-PORT/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
 kubernetes-dashboard is running at https://CONTROL-PLANE-HOST:CP-PORT/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy
@@ -111,6 +117,8 @@ kubectl get pods
 * Retrieve the standard output of the driver Pod where you should read the Spark Dataframe containing the welcome messages 
 ```
 kubectl logs -f hello-pyspark-5b742d7f9e2bbaf5-driver
+```
+```
 [...]
 +-----+----------+-------------------+
 |  say|        to|               when|
